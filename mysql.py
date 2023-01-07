@@ -15,7 +15,12 @@ try:
     cursor.execute(sql)
     #commit to db
     db.commit()
+except:
+    #in case of any accuring error
+    db.rollback()
 
+# disconnect from server
+db.close
 ### READ Operation ###
     #
     #
